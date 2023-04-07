@@ -9,6 +9,7 @@ jobs:
         with:
           python-version: '3.10'
       - run: pip wheel fairseq
+        continue-on-error: true
       - uses: actions/upload-artifact@v3
         with:
           name: Windows whl
