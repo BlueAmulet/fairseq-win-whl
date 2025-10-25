@@ -5,12 +5,12 @@ jobs:
     name: Build Windows
     runs-on: windows-latest
     steps:
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v6
         with:
-          python-version: '3.10'
-      - run: pip wheel fairseq
+          python-version: '3.11'
+      - run: pip wheel https://github.com/VarunGumma/fairseq/archive/refs/heads/main.zip
         continue-on-error: true
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v5
         with:
           name: Windows whl
           path: fairseq-*.whl
